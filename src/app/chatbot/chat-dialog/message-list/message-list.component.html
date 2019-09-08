@@ -1,0 +1,20 @@
+<div class="floating-chat">
+    <i class="fa fa-comments button" aria-hidden="true"></i>
+    <div class="chat">
+        <div class="header">
+            <span class="title">
+                <img src="assets/images/logo.png" width="30px" height="30px" alt="">
+                How can we help you?
+            </span>
+            <button>
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <ul class="messages" #chatlist>
+            <app-message-item *ngFor="let msg of messages;let i=index" [message]="msg" [messages]="messages" [index]="i"></app-message-item>
+        </ul>
+        <div class="footer">
+            <app-message-form [messages]="messages"></app-message-form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="form">
+  <input class="text-box" placeholder="Send a message..." name="message.content" (keyup.enter)="sendMessage()"
+    [(ngModel)]="message.content" contenteditable="true" />
+  <button id="sendMessage" (click)="sendMessage()" *ngIf="message.content!==''" [disabled]="message.content===''||message.content==='undefined'">
+    <i class="fa fa-paper-plane send" aria-hidden="true"></i></button>
+  <app-speech-recognition *ngIf="message.content===''"></app-speech-recognition>
+</div>

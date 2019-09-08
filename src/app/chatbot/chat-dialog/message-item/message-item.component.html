@@ -1,0 +1,15 @@
+<li  *ngIf="index-1>=0 && message.sentby === messages[index-1].sentby;else chat" [ngClass]="{   'froms': message.sentby === messages[index-1].sentby && message.sentby === 'bot',
+    'tos': message.sentby === messages[index-1].sentby && message.sentby === 'user'}">
+  {{ message.content | titlecase }}
+  <div aria-disabled="true" style="position: absolute;font-size: 8px; bottom: 0; right: 5px; width: 100px; text-align:right;">
+    <i class="fa fa-clock-o"></i> {{message.timestamp | date:"hh:mm:a"}}
+  </div>
+</li>
+<ng-template #chat>
+  <li  [ngClass]="{ 'from': message.sentby === 'bot','to':   message.sentby === 'user' }">
+    {{ message.content | titlecase }}
+    <div aria-disabled="true" style="position: absolute;font-size: 8px; bottom: 0; right: 5px; width: 100px; text-align:right;">
+      <i class="fa fa-clock-o"></i> {{message.timestamp | date:"hh:mm:a"}}
+    </div>
+  </li>
+</ng-template>

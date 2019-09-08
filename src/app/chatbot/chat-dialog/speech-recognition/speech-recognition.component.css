@@ -1,0 +1,12 @@
+button {
+    margin-top:5px; 
+    background: transparent;
+    border: 0;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.send{
+    color: #0EC879;
+}

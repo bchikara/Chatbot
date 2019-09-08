@@ -1,0 +1,59 @@
+$scrollbar-width: 5px;
+$chat-thread-bgd-color: rgba(25, 147, 147, 0.2);
+$chat-thread-msg-arrow-size: 10px;
+$chat-thread-avatar-size: 25px;
+$chat-thread-offset: #{$chat-thread-avatar-size + 20px};
+$default-shadow-color: rgb(0, 0, 0);
+
+@mixin fancy-scrollbar() {
+    &::-webkit-scrollbar {
+        width: $scrollbar-width;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: $scrollbar-width;
+        background-color: rgba(25, 147, 147, 0.1);
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $scrollbar-width;
+        background-color: $chat-thread-bgd-color;
+    }
+}
+
+
+.form{
+    flex-shrink: 0;
+    display: flex;
+    //flex-direction: row-reverse;
+    max-height: 90px;
+    min-width: 300px;
+    background: transparent;
+            button {
+                background: transparent;
+                border: 0;
+                color: white;
+                text-transform: uppercase;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+              .text-box {
+                border-radius: 3px;
+                background: $chat-thread-bgd-color;
+                min-height: 100%;
+                width: 100%;
+                outline: transparent;
+                margin-right: 5px;
+                color: #0EC879;
+                overflow-y: auto;
+                padding: 2px 5px;
+                border: 0;
+                @include fancy-scrollbar;
+            }
+            
+            .send{
+                color: #0EC879;
+            }
+            ::placeholder{
+                color: #0EC879;
+                opacity: 0.5;
+            }
+}
